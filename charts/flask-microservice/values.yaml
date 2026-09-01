@@ -1,0 +1,27 @@
+replicaCount: 1
+
+image:
+  repository: docker.io/charungooa/flask-microservice
+  tag: "latest"          # overridden per-environment by the HelmRelease
+  pullPolicy: IfNotPresent
+
+imagePullSecrets: []      # e.g. [{ name: dockerhub-creds }] for private repos
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 5000
+
+resources:
+  requests:
+    cpu: 50m
+    memory: 64Mi
+  limits:
+    cpu: 250m
+    memory: 128Mi
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 5
+  targetCPUUtilizationPercentage: 80
