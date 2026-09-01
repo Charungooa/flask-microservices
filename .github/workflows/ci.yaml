@@ -6,9 +6,7 @@ on:
   workflow_dispatch:
 
 env:
-    IMAGE:
-        name: IMAGE
-        value: docker.io/charungooa/flask-microservice
+    IMAGE: docker.io/charungooa/flask-microservice
 
 jobs:
    build-push:
