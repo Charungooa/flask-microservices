@@ -54,9 +54,10 @@ app.kubernetes.io/instance: {{ .Release.Name }}
 Create the name of the service account to use
 */}}
 {{- define "flask-microservice.serviceAccountName" -}}
-{{- if .Values.serviceAccount.create }}
-{{- default (include "flask-microservice.fullname" .) .Values.serviceAccount.name }}
+{{- $sa := default dict .Values.serviceAccount }}
+{{- if $sa.create }}
+{{- default (include "flask-microservice.fullname" .) $sa.name }}
 {{- else }}
-{{- default "default" .Values.serviceAccount.name }}
+{{- default "default" $sa.name }}
 {{- end }}
 {{- end }}

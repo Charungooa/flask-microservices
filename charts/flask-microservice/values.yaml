@@ -1,11 +1,15 @@
 replicaCount: 1
 
 image:
-  repository: docker.io/charungooa/flask-microservice
+  repository: docker.io/topaz82/flask-microservices
   tag: "latest"          # overridden per-environment by the HelmRelease
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []      # e.g. [{ name: dockerhub-creds }] for private repos
+
+serviceAccount:
+  create: false
+  name: ""
 
 service:
   type: ClusterIP
