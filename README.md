@@ -144,5 +144,6 @@ The default values can be customized in `charts/flask-microservice/values.yaml`:
 This project is open source and available under the terms of your choice.
 
 ## Author
+Amit Charungoo
 
 Charungooa - [GitHub Profile](https://github.com/Charungooa)
