@@ -7,6 +7,8 @@ on:
 
 env:
     IMAGE: docker.io/topaz82/flask-microservices
+    # token for dockerhub is required here too
+    
 
 jobs:
    build-push:
